@@ -48,7 +48,7 @@ public class HelloWorldBot extends TelegramLongPollingBot {
             }
             if (temp.favoriteWord == null) {
                 temp.favoriteWord = msg;
-                User user = new User(chatId, null, temp.name, temp.age, temp.favoriteWord, temp.favoriteColor);
+                User user = new User(chatId, temp.name, temp.age, temp.favoriteWord, temp.favoriteColor);
                 users.put(chatId, user);
                 tempUsers.remove(chatId);
                 sendMsg(chatId, "Дякую! Твої дані збережено.");
@@ -126,15 +126,13 @@ public class HelloWorldBot extends TelegramLongPollingBot {
         }
     }
     static class User {
-        public String userName = null;
         public String name = null;
         public int age = -1;
         public String favoriteColor = null;
         public String favoriteWord = null;
         public long chatId;
-        public User(long chatId, String userName, String name, int age, String favoriteWord, String favoriteColor) {
+        public User(long chatId, String name, int age, String favoriteWord, String favoriteColor) {
             this.chatId = chatId;
-            this.userName = userName;
             this.name = name;
             this.age = age;
             this.favoriteWord = favoriteWord;
