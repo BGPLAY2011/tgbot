@@ -1,3 +1,4 @@
+import org.example.MyTelegramBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 public class Main {
